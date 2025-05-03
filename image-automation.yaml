@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: images
+  namespace: flux-system
+data:
+  image-reflector-controller: ghcr.io/fluxcd/image-reflector-controller:v0.30.0
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageRepository
+metadata:
+  name: image-reflector-controller
+  namespace: flux-system
+spec:
+  image: ghcr.io/fluxcd/image-reflector-controller
+  interval: 1m0s
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: image-reflector-controller
+  namespace: flux-system
+spec:
+  imageRepositoryRef:
+    name: image-reflector-controller
+  policy:
+    semver:
+      range: '>=0.20.0'
