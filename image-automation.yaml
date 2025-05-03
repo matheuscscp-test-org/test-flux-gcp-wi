@@ -4,7 +4,7 @@ metadata:
   name: images
   namespace: flux-system
 data:
-  image-reflector-controller: ghcr.io/fluxcd/image-reflector-controller:v0.30.0
+  image-reflector-controller: ghcr.io/fluxcd/image-reflector-controller:v0.30.0 # {"$imagepolicy": "flux-system:image-reflector-controller"}
 ---
 apiVersion: image.toolkit.fluxcd.io/v1beta2
 kind: ImageRepository
@@ -26,3 +26,26 @@ spec:
   policy:
     semver:
       range: '>=0.20.0'
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageUpdateAutomation
+metadata:
+  name: flux-system
+  namespace: flux-system
+spec:
+  git:
+    checkout:
+      ref:
+        branch: main
+    commit:
+      author:
+        email: flux@example.com
+        name: flux
+      messageTemplate: '{{range .Updated.Images}}{{println .}}{{end}}'
+  interval: 1m0s
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  update:
+    path: ./
+    strategy: Setters
