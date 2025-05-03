@@ -4,7 +4,7 @@ metadata:
   name: images
   namespace: flux-system
 data:
-  image-reflector-controller: ghcr.io/fluxcd/image-reflector-controller:v0.30.0 # {"$imagepolicy": "flux-system:image-reflector-controller"}
+  image-reflector-controller: ghcr.io/fluxcd/image-reflector-controller:v0.34.0 # {"$imagepolicy": "flux-system:image-reflector-controller"}
 ---
 apiVersion: image.toolkit.fluxcd.io/v1beta2
 kind: ImageRepository
