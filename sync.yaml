@@ -5,10 +5,9 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1m0s
-  provider: azure
   ref:
     branch: main
-  url: https://dev.azure.com/matheuscscp/flux-tests/_git/flux-system
+  url: https://github.com/matheuscscp-test-org/test-flux-gcp-wi
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
