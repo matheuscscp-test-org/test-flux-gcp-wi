@@ -4,8 +4,8 @@ metadata:
   name: image-reflector-controller
   namespace: flux-system
 spec:
-  provider: gcp
-  image: us-docker.pkg.dev/kubernetes-bifrost/flux-tests/image-reflector-controller
+  provider: aws
+  image: 211125720409.dkr.ecr.us-east-1.amazonaws.com/image-reflector-controller
   interval: 1m0s
   serviceAccountName: default
 ---
