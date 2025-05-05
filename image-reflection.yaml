@@ -4,8 +4,8 @@ metadata:
   name: image-reflector-controller
   namespace: flux-system
 spec:
-  provider: azure
-  image: fluxtests.azurecr.io/matheuscscp/fluxcd/image-reflector-controller
+  provider: gcp
+  image: us-docker.pkg.dev/kubernetes-bifrost/flux-tests/image-reflector-controller
   interval: 1m0s
   serviceAccountName: default
 ---
