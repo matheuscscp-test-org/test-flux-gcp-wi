@@ -5,8 +5,8 @@ metadata:
   namespace: flux-system
 spec:
   type: oci
-  provider: azure
-  url: oci://fluxtests.azurecr.io/charts
+  provider: gcp
+  url: oci://us-docker.pkg.dev/kubernetes-bifrost/flux-tests/charts
   interval: 1m0s
 ---
 apiVersion: source.toolkit.fluxcd.io/v1
