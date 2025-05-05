@@ -4,7 +4,7 @@ metadata:
   name: test
   namespace: flux-system
 spec:
-  provider: gcp
-  url: oci://us-docker.pkg.dev/kubernetes-bifrost/flux-tests/oci-artifact
+  provider: aws
+  url: oci://211125720409.dkr.ecr.us-east-1.amazonaws.com/oci-artifact
   interval: 1m0s
   serviceAccountName: default
