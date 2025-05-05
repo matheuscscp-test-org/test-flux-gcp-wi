@@ -5,8 +5,8 @@ metadata:
   namespace: flux-system
 spec:
   type: oci
-  provider: gcp
-  url: oci://us-docker.pkg.dev/kubernetes-bifrost/flux-tests/charts
+  provider: aws
+  url: oci://211125720409.dkr.ecr.us-east-1.amazonaws.com
   interval: 1m0s
 ---
 apiVersion: source.toolkit.fluxcd.io/v1
