@@ -1,0 +1,10 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: OCIRepository
+metadata:
+  name: test
+  namespace: flux-system
+spec:
+  provider: azure
+  url: oci://fluxtests.azurecr.io/oci-artifact
+  interval: 1m0s
+  serviceAccountName: default
