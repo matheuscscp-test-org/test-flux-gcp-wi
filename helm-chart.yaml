@@ -1,0 +1,10 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: test
+  namespace: flux-system
+spec:
+  type: oci
+  provider: azure
+  url: oci://fluxtests.azurecr.io/charts
+  interval: 1m0s
